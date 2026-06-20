@@ -2,6 +2,7 @@ import { Router } from "express";
 import pool from "../db.js";
 import bcrypt from "bcrypt";
 import jwt from "JsonWebToken";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const router=Router();
 
@@ -80,6 +81,7 @@ router.post("/login",async(req,res)=>{
         return res.status(500).json({message:"internal server error"});
     }
 });
+
 
 
 export default router;
